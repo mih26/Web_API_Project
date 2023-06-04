@@ -1,0 +1,56 @@
+
+***********************Get******************
+
+Get:   http://localhost:61466/api/NoteBooks/1
+
+***********************Post******************
+
+Post:  http://localhost:61466/api/NoteBooks
+Body-Raw-Json:
+{
+    "NoteBookModel": "Dell 15s",
+    "ManufactureDate": "2023-02-01T00:00:00",
+    "Price": 120000.0000,
+    "Instock": true,
+    "Picture": "2.jpg",
+    "Configurations": [
+        {
+            "ConfigurationDetails": "RAM 18GB",
+            "BrandCode": "82"
+        }
+    ]
+}
+For View Post into Get:  http://localhost:61466/api/NoteBooks/2
+
+***********************Put******************
+
+Put:   http://localhost:61466/api/NoteBooks/1
+Body-Raw-Json:
+{
+    "$id": "1",
+    "NoteBookId": 2,
+    "NoteBookModel": "Acer 97",
+    "ManufactureDate": "2023-04-03T00:00:00",
+    "Price": 120000.0000,
+    "Instock": true,
+    "Picture": "3.jpg",
+    "Configurations": [
+        {
+            "$id": "2",
+            "ConfigurationId": 2,
+            "ConfigurationDetails": "RAM 8GB",
+            "BrandCode": "97",
+            "NoteBookId": 2,
+            "NoteBook": {
+                "$ref": "1"
+            }
+        }
+    ]
+}
+For View Put into Get:  http://localhost:61466/api/NoteBooks/3
+
+***********************Delete******************
+
+Delete:  http://localhost:61466/api/NoteBooks/2
+
+
